@@ -1,5 +1,64 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_hero_sections';
+  info: {
+    displayName: 'Hero Section';
+  };
+  attributes: {
+    cta: Schema.Attribute.Component<'elements.link', false>;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    theme: Schema.Attribute.Enumeration<['light', 'dark']>;
+  };
+}
+
+export interface ElementsLink extends Struct.ComponentSchema {
+  collectionName: 'components_elements_links';
+  info: {
+    displayName: 'Link';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    isExternal: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    text: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsLogo extends Struct.ComponentSchema {
+  collectionName: 'components_elements_logos';
+  info: {
+    description: '';
+    displayName: 'Logo';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    logoText: Schema.Attribute.String;
+  };
+}
+
+export interface ElementsTool extends Struct.ComponentSchema {
+  collectionName: 'components_elements_tools';
+  info: {
+    displayName: 'Tool';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    iconClass: Schema.Attribute.String;
+  };
+}
+
+export interface LayoutHeader extends Struct.ComponentSchema {
+  collectionName: 'components_layout_headers';
+  info: {
+    displayName: 'Header';
+  };
+  attributes: {
+    logo: Schema.Attribute.Component<'elements.logo', true>;
+    navigation: Schema.Attribute.Component<'elements.link', true>;
+    tool: Schema.Attribute.Component<'elements.tool', true>;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -65,6 +124,11 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.hero-section': BlocksHeroSection;
+      'elements.link': ElementsLink;
+      'elements.logo': ElementsLogo;
+      'elements.tool': ElementsTool;
+      'layout.header': LayoutHeader;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

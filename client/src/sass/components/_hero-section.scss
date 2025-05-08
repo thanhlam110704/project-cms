@@ -1,0 +1,52 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 70rem;
+  padding: 22rem 4.8rem 0;
+  margin-bottom: 12.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit:initial;
+      object-position: center bottom;
+    }
+
+    &__overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__cta {
+    position: absolute;
+    top: 75%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: start;
+  }
+}
