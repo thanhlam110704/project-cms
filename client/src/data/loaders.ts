@@ -1,6 +1,7 @@
 import qs from "qs";
 import { fetchAPI } from "@/utils/fetch-api";
 import { getStrapiURL } from "@/utils/get-strapi-url";
+import { title } from "process";
 
 const BASE_URL = getStrapiURL();
 const homePageQuery = qs.stringify({
@@ -79,7 +80,6 @@ const globalSettingQuery = qs.stringify({
                 },
               },
             },
-            tool: true,
           },
         },
       },

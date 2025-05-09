@@ -14,11 +14,6 @@
       "type": "component",
       "repeatable": true,
       "component": "elements.link"
-    },
-    "tool": {
-      "type": "component",
-      "repeatable": true,
-      "component": "elements.tool"
     }
   }
 }

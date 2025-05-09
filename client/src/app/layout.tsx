@@ -4,7 +4,6 @@ import "./globals.css";
 import "../sass/main.scss";
 import { Header } from "@/components/layout/Header";
 import { getGlobalSettings } from "@/data/loaders";
-import { notFound } from "next/navigation";
 
 
 const geistSans = Geist({
@@ -37,12 +36,19 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const { header } = await loader();
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-      <Header data={header} />
+        {header ? (
+          <Header data={header} />
+        ) : (
+          <div>Không có header dữ liệu</div> 
+        )}
         {children}
       </body>
     </html>
   );
 }
+
+

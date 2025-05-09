@@ -38,6 +38,8 @@ export type Block =
 
 
 export interface HeroSectionProps extends Base<"blocks.hero-section"> {
+  title?: string;
+  description?: string;
   theme: "light" | "dark";
   image: ImageProps;
   cta?: LinkProps;

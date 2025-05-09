@@ -2,7 +2,7 @@ import { ImageProps } from "@/types";
 
 import Link from "next/link";
 import { StrapiImage } from "./StrapiImage";
-import { formatDate } from "@/utils/format-date";
+
 
 export interface CardProps {
   documentId: string;
@@ -45,8 +45,7 @@ export function Card({
           </p>
         )}
         {(startDate ?? createdAt) && (
-          <p>{formatDate(startDate ?? createdAt)}</p>
-        )}
+                )}
         <p>{description.slice(0, 144)}...</p>
       </div>
     </Link>

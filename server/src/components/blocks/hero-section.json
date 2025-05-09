@@ -1,17 +1,19 @@
 {
   "collectionName": "components_blocks_hero_sections",
   "info": {
-    "displayName": "Hero Section"
+    "displayName": "Hero Section",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "cta": {
       "type": "component",
@@ -24,6 +26,12 @@
         "light",
         "dark"
       ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

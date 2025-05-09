@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "mux_vids",
+  "info": {
+    "singularName": "mux-vid",
+    "pluralName": "mux-vids",
+    "displayName": "MuxVid",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "mux_video_uploader_mux_asset": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::mux-video-uploader.mux-asset"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

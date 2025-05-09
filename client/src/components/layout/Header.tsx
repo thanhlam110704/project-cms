@@ -34,7 +34,7 @@ export function Header({ data }: HeaderProps) {
               height={40}
             />
           )}
-          <span className="logo-text">{logoItem?.logoText}</span>
+         
         </Link>
 
         {/* Navigation */}
@@ -51,17 +51,6 @@ export function Header({ data }: HeaderProps) {
           ))}
         </nav>
 
-        {/* Tools */}
-        <div className="header-tools">
-          {data.tool?.map((item) => (
-            <Link key={item.id} href={item.href} className="tool-item">
-              <i className={item.iconClass}></i>
-              {item.iconClass.includes("fa-bag-shopping") && (
-                <span className="tool-badge">0</span>
-              )}
-            </Link>
-          ))}
-        </div>
       </div>
     </header>
   );

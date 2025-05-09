@@ -3,12 +3,15 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface BlocksHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_blocks_hero_sections';
   info: {
+    description: '';
     displayName: 'Hero Section';
   };
   attributes: {
     cta: Schema.Attribute.Component<'elements.link', false>;
+    description: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files'>;
     theme: Schema.Attribute.Enumeration<['light', 'dark']>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -36,17 +39,6 @@ export interface ElementsLogo extends Struct.ComponentSchema {
   };
 }
 
-export interface ElementsTool extends Struct.ComponentSchema {
-  collectionName: 'components_elements_tools';
-  info: {
-    displayName: 'Tool';
-  };
-  attributes: {
-    href: Schema.Attribute.String;
-    iconClass: Schema.Attribute.String;
-  };
-}
-
 export interface LayoutHeader extends Struct.ComponentSchema {
   collectionName: 'components_layout_headers';
   info: {
@@ -55,7 +47,6 @@ export interface LayoutHeader extends Struct.ComponentSchema {
   attributes: {
     logo: Schema.Attribute.Component<'elements.logo', true>;
     navigation: Schema.Attribute.Component<'elements.link', true>;
-    tool: Schema.Attribute.Component<'elements.tool', true>;
   };
 }
 
@@ -127,7 +118,6 @@ declare module '@strapi/strapi' {
       'blocks.hero-section': BlocksHeroSection;
       'elements.link': ElementsLink;
       'elements.logo': ElementsLogo;
-      'elements.tool': ElementsTool;
       'layout.header': LayoutHeader;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
